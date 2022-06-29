@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.student.council.electionSystem">
+    <!--
+    now lets see how to add candidate, but here candidate party name is pre determined
+    because when user register with phone number and password at that time party name with votes are register
+    with user like this
+    if you want to change this make sure first change it here then you can add user manually through firebase
+    like this
+    -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/osces"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/osces"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".activities.AdminElectionTime"></activity>
+        <activity android:name=".activities.AdminCandidateTime" />
+        <activity android:name=".activities.Admin_select" />
+        <activity android:name=".activities.CandidateRegistration" />
+        <activity android:name=".activities.OtpVerificationActivity" />
+        <activity android:name=".activities.CandiatephnoActivity" />
+        <activity
+            android:name=".activities.PartyDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AllPartiesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.IndividualVotesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.AdminActivity"
+            android:theme="@style/RegLogTheme" />
+        <activity
+            android:name=".activities.AboutAppActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CameraActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="com.google.firebase:firebase-ml-vision.DEPENDENCIES"
+                android:value="face" />
+        </activity>
+        <activity
+            android:name=".activities.FinalActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.UserUpdatePassword"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.SelectParty"
+            android:theme="@style/RegLogTheme" />
+        <activity
+            android:name=".activities.VerifiyId"
+            android:theme="@style/RegLogTheme" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:theme="@style/RegLogTheme" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/RegLogTheme" />
+        <activity
+            android:name=".activities.welcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/stripBottomLeft1"
+            android:layout_width="15dp"
+            android:layout_height="180dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripBottomLeft2"
+            android:layout_width="15dp"
+            android:layout_height="120dp"
+            android:layout_toEndOf="@id/stripBottomLeft1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripBottomLeft3"
+            android:layout_width="15dp"
+            android:layout_height="80dp"
+            android:layout_toEndOf="@id/stripBottomLeft2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripBottomLeft4"
+            android:layout_width="15dp"
+            android:layout_height="190dp"
+            android:layout_toEndOf="@id/stripBottomLeft3"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripBottomLeft5"
+            android:layout_width="15dp"
+            android:layout_height="110dp"
+            android:layout_toEndOf="@id/stripBottomLeft4"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripBottomLeft6"
+            android:layout_width="15dp"
+            android:layout_height="50dp"
+            android:layout_toEndOf="@id/stripBottomLeft5"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripTopRight1"
+            android:layout_width="15dp"
+            android:layout_height="180dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripTopRight2"
+            android:layout_width="15dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/stripTopRight1"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/stripTopRight3"
+            android:layout_width="15dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@id/stripTopRight2"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/topLeftSquare1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:id="@+id/topLeftSquare2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/circle" />
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="80dp"
+            android:src="@drawable/circle" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/circle" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/productsans_bold"
+            android:letterSpacing="0.2"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:text="@string/online_voting_made_easy"
+            android:textColor="@color/orange2"
+            android:textSize="20sp"
+            android:layout_margin="30dp"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

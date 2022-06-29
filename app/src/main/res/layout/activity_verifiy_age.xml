@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.VerifiyId"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/logo1"
+                android:layout_width="84dp"
+                android:layout_height="38dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/osces" />
+
+            <TextView
+                android:id="@+id/h3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/productsans_bold"
+                android:text="Verify USN"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="36dp"
+                android:background="@drawable/white_background"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/productsans_bold"
+                    android:includeFontPadding="false"
+                    android:text="Name"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/text2" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/productsans_bold"
+                    android:includeFontPadding="false"
+                    android:text="Mr. XYX"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/productsans_bold"
+                    android:includeFontPadding="false"
+                    android:text="Phone Number"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textSize="13sp"
+                    android:textColor="@color/text2" />
+
+                <TextView
+                    android:id="@+id/userPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/productsans_bold"
+                    android:includeFontPadding="false"
+                    android:text="8888822222"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/enterId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll1"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/productsans_bold"
+                android:text="@string/confirm_your_vote"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:letterSpacing="0.06"
+                android:textSize="18sp"
+                android:includeFontPadding="false"/>
+
+            <EditText
+                android:id="@+id/idproof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/enterId"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/productsans_regular"
+                android:textSize="16sp"
+                android:hint="USN (10 digits)"
+                android:inputType="text"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray" />
+
+            <Button
+                android:id="@+id/verifyagebutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idproof"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button1_ripple"
+                android:elevation="8dp"
+                android:fontFamily="@font/productsans_bold"
+                android:padding="15dp"
+                android:text="@string/confirm"
+                android:textColor="@android:color/white"
+                android:letterSpacing="0.08"
+                android:includeFontPadding="false"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/confirmTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/verifyagebutton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/productsans_regular"
+                android:text="Your USN will not be disclosed, it is only for verification purpose."
+                android:textColor="@color/textSecondary"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/id_card_image"
+                android:layout_below="@id/confirmTxt"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

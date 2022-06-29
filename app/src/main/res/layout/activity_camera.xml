@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CameraActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/wevote_logo"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/h3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/productsans_bold"
+            android:text="@string/face_detect"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/intro"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:layout_below="@id/logo1"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/productsans_regular"
+            android:text="@string/place_face" />
+
+        <com.wonderkiln.camerakit.CameraView
+            android:layout_below="@+id/intro"
+            android:id="@+id/camera_view"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_width="400dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="400dp"
+            app:ckFacing="front">
+
+        </com.wonderkiln.camerakit.CameraView>
+
+        <com.student.council.electionSystem.Helper.GraphicOverlay
+            android:layout_width="400dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/graphic_overlay"
+            android:layout_height="400dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_below="@+id/intro">
+
+        </com.student.council.electionSystem.Helper.GraphicOverlay>
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detect_face_btn"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/button1_ripple"
+            android:textColor="@android:color/white"
+            android:letterSpacing="0.06"
+            android:text="@string/detect_face"
+            android:textSize="17sp"
+            android:fontFamily="@font/productsans_bold"/>
+
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/instantvote"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/button2_ripple"
+            android:textColor="@android:color/white"
+            android:letterSpacing="0.06"
+            android:text="@string/vote_now"
+            android:textSize="17sp"
+            android:fontFamily="@font/productsans_bold"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

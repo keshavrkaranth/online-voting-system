@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/osces" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameentryy"
+            android:layout_below="@+id/h3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gray"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/nameentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:letterSpacing="0.06"
+                android:hint="@string/your_name"
+                android:textColorHint="@color/gray"
+                android:inputType="textPersonName|text"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneentryy"
+            android:layout_below="@+id/nameentryy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gray"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/phoneentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameentryy"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:letterSpacing="0.06"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordentryy"
+            android:layout_below="@+id/phoneentryy"
+            android:textColorHint="@color/gray"
+            app:passwordToggleDrawable="@drawable/pass_icon_selector"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/gray"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/passwordentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:letterSpacing="0.06"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:hint="@string/password"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/registerbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passwordentryy"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button1_ripple"
+            android:fontFamily="@font/productsans_bold"
+            android:padding="15dp"
+            android:text="@string/register"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:letterSpacing="0.06"/>
+
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/loginBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/productsans_regular"
+            android:text="@string/already_hav_account"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:letterSpacing="0.07"/>
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button2_ripple"
+            android:fontFamily="@font/productsans_bold"
+            android:layout_centerHorizontal="true"
+            android:onClick="gotologinpage"
+            android:padding="15dp"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:letterSpacing="0.06"/>
+
+        <TextView
+            android:id="@+id/h3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo1"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/productsans_bold"
+            android:text="@string/create_accountt"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:letterSpacing="0.06"
+            android:textAllCaps="true"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

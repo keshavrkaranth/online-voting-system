@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CandidateRegistration">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/osces" />
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_above="@+id/usnentryy"
+            android:layout_below="@+id/h3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="122dp"
+            android:layout_marginBottom="104dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/man" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameentryy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/h3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:textColorHint="@color/gray">
+
+
+            <EditText
+                android:id="@+id/nameentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:hint="@string/your_name"
+                android:inputType="textPersonName|text"
+                android:letterSpacing="0.06"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usnentryy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameentryy"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/gray">
+
+            <EditText
+                android:id="@+id/usneentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameentryy"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:hint="USN"
+                android:inputType="text"
+                android:letterSpacing="0.06"
+                android:maxLength="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/branchentryy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usnentryy"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/gray">
+
+            <EditText
+                android:id="@+id/branchentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/usnentryy"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:hint="BRANCH"
+                android:inputType="text"
+                android:letterSpacing="0.06"
+                android:maxLength="25"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionentryy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/branchentryy"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColorHint="@color/gray">
+
+            <EditText
+                android:id="@+id/descriptionentry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/branchentryy"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/productsans_regular"
+                android:hint="DESCRIPTION"
+                android:inputType="textMultiLine"
+                android:letterSpacing="0.06"
+                android:maxLength="10"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/submitbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionentryy"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button1_ripple"
+            android:fontFamily="@font/productsans_bold"
+            android:letterSpacing="0.06"
+            android:padding="15dp"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:id="@+id/h3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/productsans_bold"
+            android:letterSpacing="0.06"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
