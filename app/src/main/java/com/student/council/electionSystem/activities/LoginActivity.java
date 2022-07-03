@@ -1,10 +1,12 @@
 package com.student.council.electionSystem.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,6 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.student.council.electionSystem.Model.Users;
 import com.student.council.electionSystem.Prevalent.Prevalent;
 import com.student.council.electionSystem.R;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -119,14 +124,39 @@ public class LoginActivity extends AppCompatActivity {
 
                             if(userdata.getPassword().equals(Password.getText().toString()))
                             {
+                                mref = FirebaseDatabase.getInstance().getReference("electionTiming");
+                                mref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @RequiresApi(api = Build.VERSION_CODES.O)
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String start_date = snapshot.child("start_date").getValue().toString();
+                                        String end_date = snapshot.child("end_date").getValue().toString();
+                                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm");
+                                        LocalDateTime start = LocalDateTime.parse(start_date.toString(),formatter);
+                                        LocalDateTime end = LocalDateTime.parse(end_date.toString(),formatter);
+                                        LocalDateTime now = LocalDateTime.now();
+                                        System.out.println("check this"+start.format(formatter));
+                                        System.out.println("check this1"+start.compareTo(now));
+                                        if((start.compareTo(now))==1 ||(end.compareTo(now))==1 ){
+                                            LoadingBar.dismiss();
+                                            Toast.makeText(LoginActivity.this, "Logged in Successfully..", Toast.LENGTH_SHORT).show();
+                                            Intent i=new Intent(LoginActivity.this,HomeActivity.class);
+                                            Prevalent.currentOnlineUser=userdata;
+                                            i.putExtra("phone",Phone.getText().toString());  //"*91"+
+                                            startActivity(i);
+                                        }
+                                        else{
+                                            LoadingBar.dismiss();
+                                            Toast.makeText(LoginActivity.this,"Voting not yet Started/Ended",Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
 
-                                LoadingBar.dismiss();
-                                Toast.makeText(LoginActivity.this, "Logged in Successfully..", Toast.LENGTH_SHORT).show();
-                                Intent i=new Intent(LoginActivity.this,HomeActivity.class);
-                                Prevalent.currentOnlineUser=userdata;
-                                i.putExtra("phone",Phone.getText().toString());  //"*91"+
-                                startActivity(i);
-                                finish();
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
                             }
                             else
                             {

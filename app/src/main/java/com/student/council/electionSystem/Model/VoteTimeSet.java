@@ -1,30 +1,30 @@
 package com.student.council.electionSystem.Model;
 
 public class VoteTimeSet {
-    private String startDate;
-    private String endDate;
+    private String start_date;
+    private String end_date;
 
     public VoteTimeSet() {
     }
 
-    public VoteTimeSet(String startDate, String endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public VoteTimeSet(String start_date, String end_date) {
+        this.start_date = start_date;
+        this.end_date = end_date;
     }
 
     public String getStartDate() {
-        return startDate;
+        return start_date;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public void setStartDate(String start_date) {
+        this.start_date = start_date;
     }
 
     public String getEndDate() {
-        return endDate;
+        return end_date;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setEndDate(String end_date) {
+        this.end_date = end_date;
     }
 }

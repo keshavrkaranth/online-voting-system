@@ -1,9 +1,11 @@
 package com.student.council.electionSystem.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.format.DateFormat;
@@ -17,6 +19,8 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +48,7 @@ public class AdminCandidateTime extends AppCompatActivity {
         date_time_start=findViewById(R.id.date_time_start);
         date_time_end=findViewById(R.id.date_time_end);
 
-        set_time_btn = findViewById(R.id.settimebtn);
+        set_time_btn = findViewById(R.id.settimebtnc);
 
         date_time_start.setInputType(InputType.TYPE_NULL);
         date_time_end.setInputType(InputType.TYPE_NULL);
@@ -116,6 +120,34 @@ public class AdminCandidateTime extends AppCompatActivity {
                 new DatePickerDialog(AdminCandidateTime.this,dateSetListener,calendar1.get(Calendar.YEAR),calendar1.get(Calendar.MONTH),calendar1.get(Calendar.DAY_OF_MONTH)).show();
 
 
+            }
+        });
+
+        set_time_btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                System.out.println("Start date and time is"+date_time_start.getText().toString());
+                System.out.println("End date and time is"+date_time_end.getText().toString());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm");
+                LocalDateTime start = LocalDateTime.parse(date_time_start.getText().toString(),formatter);
+                LocalDateTime end = LocalDateTime.parse(date_time_end.getText().toString(),formatter);
+
+                if (end.compareTo(start)<0)
+                {
+                    Toast.makeText(AdminCandidateTime.this,"Please check your date and time",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    DatabaseReference  ref = FirebaseDatabase.getInstance().getReference("candidateTiming");
+                    Map<String,Object> details=new HashMap<String,Object>();
+
+                    details.put("start_date",date_time_start.getText().toString());
+                    details.put("end_date",date_time_end.getText().toString());
+
+                    ref.setValue(details);
+
+                }
             }
         });
 

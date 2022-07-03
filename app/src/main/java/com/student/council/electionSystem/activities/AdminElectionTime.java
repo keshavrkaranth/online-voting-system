@@ -1,8 +1,12 @@
 package com.student.council.electionSystem.activities;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.format.DateFormat;
@@ -13,13 +17,24 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.student.council.electionSystem.R;
 
 public class AdminElectionTime extends AppCompatActivity {
     EditText date_time_start,date_time_end;
+    Button submit;
+    private DatabaseReference mref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +44,11 @@ public class AdminElectionTime extends AppCompatActivity {
 
         date_time_start=findViewById(R.id.date_time_start);
         date_time_end=findViewById(R.id.date_time_end);
+        submit = (Button) findViewById(R.id.settimebtn);
 
         date_time_start.setInputType(InputType.TYPE_NULL);
         date_time_end.setInputType(InputType.TYPE_NULL);
+
 
         date_time_start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +70,7 @@ public class AdminElectionTime extends AppCompatActivity {
                             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
                                 calendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
                                 calendar.set(Calendar.MINUTE,minute);
-                                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd HH:mm");
+                                @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yy-MM-dd HH:mm");
                                 date_time_start.setText(simpleDateFormat.format(calendar.getTime()));
 
 
@@ -102,6 +119,35 @@ public class AdminElectionTime extends AppCompatActivity {
 
             }
         });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                System.out.println("Start date and time is"+date_time_start.getText().toString());
+                System.out.println("End date and time is"+date_time_end.getText().toString());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm");
+                LocalDateTime start = LocalDateTime.parse(date_time_start.getText().toString(),formatter);
+                LocalDateTime end = LocalDateTime.parse(date_time_end.getText().toString(),formatter);
+
+                if (end.compareTo(start)<0)
+                {
+                    Toast.makeText(AdminElectionTime.this,"Please check your date and time",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    DatabaseReference  ref = FirebaseDatabase.getInstance().getReference("electionTiming");
+                    Map<String,Object> details=new HashMap<String,Object>();
+
+                    details.put("start_date",date_time_start.getText().toString());
+                    details.put("end_date",date_time_end.getText().toString());
+
+                    ref.setValue(details);
+
+                }
+            }
+        });
+
 
     }
 }

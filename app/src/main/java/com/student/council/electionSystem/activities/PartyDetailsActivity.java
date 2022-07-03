@@ -88,44 +88,7 @@ public class PartyDetailsActivity extends AppCompatActivity {
                             }
                         });
 
-                        switch (Category) {
-                            case "Computer Science":
 
-                                mref.child("Users").child(Phone).child("Computer Science").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                    }
-                                });
-                                break;
-                            case "Information Technology":
-                                mref.child("Users").child(Phone).child("Information Technology").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                    }
-                                });
-                                break;
-                            case "Electrical":
-                                mref.child("Users").child(Phone).child("Electrical").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                    }
-                                });
-                                break;
-                            case "Electronics":
-                                mref.child("Users").child(Phone).child("Electronics").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                    }
-                                });
-                                break;
-                            case "Mechanical":
-                                mref.child("Users").child(Phone).child("Mechanical").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                    }
-                                });
-                                break;
-                        }
 
                     }
                 });

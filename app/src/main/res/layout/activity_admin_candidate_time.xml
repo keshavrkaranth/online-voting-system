@@ -96,8 +96,9 @@
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
         android:textSize="16sp" />
+
     <Button
-        android:id="@+id/loginbutton"
+        android:id="@+id/settimebtnc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/date_time_end"
@@ -106,10 +107,10 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/button1_ripple"
         android:fontFamily="@font/productsans_bold"
+        android:letterSpacing="0.06"
         android:padding="15dp"
         android:text="Set"
         android:textColor="@android:color/white"
-        android:letterSpacing="0.06"
         android:textSize="17sp" />
 
 
